@@ -1,0 +1,53 @@
+---
+interface Props {
+  headings: { depth: number; slug: string; text: string }[];
+}
+
+const { headings = [] } = Astro.props;
+const filteredHeadings = headings.filter(h => h.depth > 1 && h.depth < 4);
+---
+
+<nav class="toc bg-gray-900 border border-gray-800 rounded-lg p-4 mb-8 sticky top-4">
+  <h2 class="text-lg font-semibold mb-3 pb-2 border-b border-gray-800">Contents</h2>
+  {filteredHeadings.length > 0 ? (
+    <ol class="space-y-2 text-sm">
+      {filteredHeadings.map(heading => (
+        <li 
+          class="hover:bg-gray-800 rounded transition-colors"
+          style={`margin-left: ${(heading.depth - 2) * 1}rem`}
+        >
+          <a
+            href={`#${heading.slug}`}
+            class="text-gray-300 hover:text-blue-400 transition-colors block py-1 px-2"
+          >
+            {heading.text}
+          </a>
+        </li>
+      ))}
+    </ol>
+  ) : (
+    <p class="text-gray-500 text-sm italic">No sections available</p>
+  )}
+</nav>
+
+<style>
+  .toc {
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #4b5563 #1f2937;
+  }
+
+  .toc::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .toc::-webkit-scrollbar-track {
+    background: #1f2937;
+  }
+
+  .toc::-webkit-scrollbar-thumb {
+    background-color: #4b5563;
+    border-radius: 3px;
+  }
+</style>
