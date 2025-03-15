@@ -1,36 +1,24 @@
 ---
 const currentYear = new Date().getFullYear();
 const siteName = "therocketor";
-
-const links = [
-  { href: '/blog', text: 'Articles' },
-  { href: '/about', text: 'About' },
-  { href: '/privacy', text: 'Privacy' },
-  { href: '/terms', text: 'Terms' },
-  { href: '/contact', text: 'Contact' },
-  { href: '/rss.xml', text: 'RSS' }
-];
 ---
 
-<footer class="bg-gray-900/95 backdrop-blur-sm border-t border-gray-800/50">
-  <div class="container mx-auto px-4">
+<footer class="bg-gray-900 border-t border-gray-800">
+  <div class="container mx-auto px-4 py-4 md:py-6">
     <!-- Newsletter Subscription -->
-    <div class="py-6 border-b border-gray-800/50">
-      <div class="max-w-xl mx-auto">
-        <div class="flex justify-between items-center mb-4">
-          <h3 class="text-lg font-medium text-white">Stay Updated</h3>
-          <div class="text-sm text-gray-500">© {currentYear} {siteName}</div>
-        </div>
-        <form class="flex gap-2" onsubmit="event.preventDefault();">
+    <div class="mb-6 pb-6 border-b border-gray-800">
+      <div class="max-w-xl mx-auto text-center">
+        <h3 class="text-base md:text-lg font-medium text-white mb-3">Subscribe to the Newsletter</h3>
+        <form class="flex gap-2 max-w-md mx-auto" onsubmit="event.preventDefault();">
           <input
             type="email"
             placeholder="Enter your email"
-            class="flex-1 bg-gray-800/50 text-sm text-gray-200 placeholder-gray-400 rounded-lg py-2 px-4 border border-gray-700/50 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50"
+            class="flex-1 px-3 py-1.5 bg-gray-800/50 border border-gray-700 rounded-lg text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50"
             required
           />
           <button
             type="submit"
-            class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 focus:ring-offset-gray-900 transition-colors"
+            class="px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 focus:ring-offset-gray-900 transition-colors"
           >
             Subscribe
           </button>
@@ -38,60 +26,24 @@ const links = [
       </div>
     </div>
 
-    <!-- Footer Links -->
-    <div class="py-4">
-      <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4">
-        {links.map(link => (
-          <a
-            href={link.href}
-            class="px-2 py-1 text-sm text-gray-300 hover:text-white transition-colors"
-          >
-            {link.text}
-          </a>
-        ))}
-      </nav>
-
-      <div class="flex flex-col items-center">
-        <!-- Social Links -->
-        <div class="flex items-center gap-4">
-          <a 
-            href="https://github.com/therocketor" 
-            class="p-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors"
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>
-          <a 
-            href="https://twitter.com/therocketor" 
-            class="p-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors"
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-          </a>
-          <a 
-            href="https://linkedin.com/in/therocketor" 
-            class="p-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors"
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
+    <!-- Footer Links and Copyright -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
+      <div class="grid grid-cols-2 md:flex md:flex-row gap-x-8 gap-y-2 md:gap-6 text-center md:text-left">
+        <div class="flex flex-col gap-2 md:gap-0 md:flex-row md:items-center md:gap-6">
+          <a href="/blog" class="text-xs md:text-sm text-gray-400 hover:text-white transition-colors">Articles</a>
+          <a href="/about" class="text-xs md:text-sm text-gray-400 hover:text-white transition-colors">About</a>
+          <a href="/privacy" class="text-xs md:text-sm text-gray-400 hover:text-white transition-colors">Privacy</a>
+        </div>
+        <div class="flex flex-col gap-2 md:gap-0 md:flex-row md:items-center md:gap-6">
+          <a href="/terms" class="text-xs md:text-sm text-gray-400 hover:text-white transition-colors">Terms</a>
+          <a href="/contact" class="text-xs md:text-sm text-gray-400 hover:text-white transition-colors">Contact</a>
+          <a href="/rss.xml" class="text-xs md:text-sm text-gray-400 hover:text-white transition-colors">RSS</a>
         </div>
       </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-  document.querySelector('form')?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = e.target.querySelector('input[type="email"]')?.value;
-    if (email) {
-      console.log('Subscribing email:', email);
-      alert('Thanks for subscribing! (Demo only)');
-      e.target.reset();
-    }
-  });
-</script>
+      <div class="flex flex-col-reverse md:flex-row items-center gap-2 md:gap-4">
+        <span class="text-xs md:text-sm text-gray-500">© {currentYear} {siteName}</span>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/therocketor" class="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+            <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://twitter.com/therocketor" clas
