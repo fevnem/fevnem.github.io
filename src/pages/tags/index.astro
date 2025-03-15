@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = await getCollection('blog');
+
+// Get all unique tags and their counts
+const tags = posts.reduce((acc, post) => {
+  post.data.tags.forEach(tag => {
+    acc[tag] = (acc[tag] || 0) + 1;
+  });
+  return acc;
+}, {} as Record<string, number>);
+
+// Sort tags by count (descending) and then alphabetically
+const sortedTags = Object.entries(tags)
+  .sort(([tagA, countA], [tagB, countB]) => {
+    if (countA === countB) {
+      return tagA.localeCompare(tagB);
+    }
+    return countB - countA;
+  });
+---
+
+<Layout title="Topics">
+  <div class="max-w-4xl mx-auto px-4">
+    <h1 class="text-2xl font-semibold mb-6">Topics</h1>
+    
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {sortedTags.map(([tag, count]) => (
+        <a
+          href={`/tags/${tag}`}
+          class="group block p-4 bg-gray-900/30 border border-gray-800 rounded-lg hover:bg-gray-800/30 transition-colors"
+        >
+          <div class="flex items-baseline justify-between gap-2">
+            <h2 class="text-lg font-medium text-blue-400 group-hover:text-blue-300">
+              #{tag}
+            </h2>
+            <span class="text-sm text-gray-500">{count} {count === 1 ? 'article' : 'articles'}</span>
+          </div>
+          <p class="mt-1 text-sm text-gray-400">
+            {posts.filter(post => post.data.tags.includes(tag))
+              .slice(0, 3)
+              .map(post => post.data.title)
+              .join(', ')}
+            {count > 3 && ', ...'}
+          </p>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,186 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import { format } from 'date-fns';
+
+const posts = await getCollection('blog');
+const featuredPosts = posts
+  .filter(post => post.data.featured)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 10);
+
+const latestPosts = posts
+  .filter(post => !post.data.featured)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 10);
+---
+
+<Layout title="Home">
+  <div class="max-w-4xl mx-auto px-4">
+    <!-- Featured Articles -->
+    {featuredPosts.length > 0 && (
+      <section class="mb-4">
+        <div class="flex items-center justify-between mb-2">
+          <h2 class="text-xl font-semibold">Featured Articles</h2>
+          <a href="/blog" class="text-sm text-blue-400 hover:text-blue-300">View all</a>
+        </div>
+        <div class="border border-gray-800 rounded-lg divide-y divide-gray-800 bg-gray-900/30">
+          {featuredPosts.map(post => (
+            <article class="group">
+              <a href={`/blog/${post.slug}`} class="block px-4 py-3 hover:bg-gray-800/30">
+                <div class="flex items-baseline justify-between gap-4">
+                  <div class="min-w-0">
+                    <div class="flex items-center gap-2">
+                      <h3 class="text-base font-medium text-blue-400 group-hover:text-blue-300 truncate">
+                        {post.data.title}
+                      </h3>
+                      <span class="shrink-0 px-1.5 py-0.5 text-[10px] font-medium bg-amber-500/10 text-amber-500 rounded">
+                        Featured
+                      </span>
+                    </div>
+                    <p class="mt-0.5 text-sm text-gray-400 line-clamp-1">{post.data.description}</p>
+                  </div>
+                  <time datetime={post.data.pubDate.toISOString()} class="shrink-0 text-xs text-gray-500">
+                    {format(post.data.pubDate, 'MMM d, yyyy')}
+                  </time>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Latest Articles -->
+    <section>
+      <div class="flex items-center justify-between mb-2">
+        <h2 class="text-xl font-semibold">Latest Articles</h2>
+        <a href="/blog" class="text-sm text-blue-400 hover:text-blue-300">View all</a>
+      </div>
+      <div id="latest-posts-container" class="border border-gray-800 rounded-lg divide-y divide-gray-800 bg-gray-900/30">
+        {latestPosts.map(post => (
+          <article class="group">
+            <a href={`/blog/${post.slug}`} class="block px-4 py-3 hover:bg-gray-800/30">
+              <div class="flex items-baseline justify-between gap-4">
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2">
+                    <h3 class="text-base font-medium text-blue-400 group-hover:text-blue-300 truncate">
+                      {post.data.title}
+                    </h3>
+                  </div>
+                  <p class="mt-0.5 text-sm text-gray-400 line-clamp-1">{post.data.description}</p>
+                </div>
+                <time datetime={post.data.pubDate.toISOString()} class="shrink-0 text-xs text-gray-500">
+                  {format(post.data.pubDate, 'MMM d, yyyy')}
+                </time>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+      <div class="mt-4 flex justify-center">
+        <nav class="flex gap-1" aria-label="Latest Articles Pagination">
+          <button 
+            id="latest-prev-page"
+            class="px-3 py-1.5 text-sm border border-gray-700 rounded-md hover:border-gray-600 bg-gray-800/50 text-gray-400 disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled
+          >
+            Previous
+          </button>
+          <button 
+            id="latest-next-page"
+            class="px-3 py-1.5 text-sm border border-gray-700 rounded-md hover:border-gray-600 bg-gray-800/50 text-gray-400 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Next
+          </button>
+        </nav>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<script>
+  let latestCurrentPage = 1;
+  const postsPerPage = 10;
+  let allPosts = [];
+
+  async function fetchPosts() {
+    try {
+      const response = await fetch('/api/posts.json');
+      if (!response.ok) throw new Error('Failed to fetch posts');
+      allPosts = await response.json();
+      updateLatestPosts();
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+    }
+  }
+
+  function updateLatestPosts() {
+    const latestPosts = allPosts.filter(post => !post.featured);
+    const totalPages = Math.ceil(latestPosts.length / postsPerPage);
+    
+    const prevButton = document.getElementById('latest-prev-page');
+    const nextButton = document.getElementById('latest-next-page');
+    
+    if (prevButton) prevButton.disabled = latestCurrentPage === 1;
+    if (nextButton) nextButton.disabled = latestCurrentPage >= totalPages;
+    
+    const start = (latestCurrentPage - 1) * postsPerPage;
+    const end = start + postsPerPage;
+    const currentPosts = latestPosts.slice(start, end);
+    
+    const container = document.getElementById('latest-posts-container');
+    if (container) {
+      container.innerHTML = currentPosts.map(post => `
+        <article class="group">
+          <a href="/blog/${post.slug}" class="block px-4 py-3 hover:bg-gray-800/30">
+            <div class="flex items-baseline justify-between gap-4">
+              <div class="min-w-0">
+                <div class="flex items-center gap-2">
+                  <h3 class="text-base font-medium text-blue-400 group-hover:text-blue-300 truncate">
+                    ${post.title}
+                  </h3>
+                </div>
+                <p class="mt-0.5 text-sm text-gray-400 line-clamp-1">${post.description}</p>
+              </div>
+              <time datetime="${new Date(post.pubDate).toISOString()}" class="shrink-0 text-xs text-gray-500">
+                ${new Date(post.pubDate).toLocaleDateString('en-US', { 
+                  month: 'short', 
+                  day: 'numeric', 
+                  year: 'numeric' 
+                })}
+              </time>
+            </div>
+          </a>
+        </article>
+      `).join('');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const latestPrevButton = document.getElementById('latest-prev-page');
+    const latestNextButton = document.getElementById('latest-next-page');
+
+    if (latestPrevButton) {
+      latestPrevButton.addEventListener('click', () => {
+        if (latestCurrentPage > 1) {
+          latestCurrentPage--;
+          updateLatestPosts();
+        }
+      });
+    }
+
+    if (latestNextButton) {
+      latestNextButton.addEventListener('click', () => {
+        const latestPosts = allPosts.filter(post => !post.featured);
+        const totalPages = Math.ceil(latestPosts.length / postsPerPage);
+        if (latestCurrentPage < totalPages) {
+          latestCurrentPage++;
+          updateLatestPosts();
+        }
+      });
+    }
+
+    fetchPosts();
+  });
+</script>
