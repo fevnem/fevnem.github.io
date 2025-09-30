@@ -279,7 +279,7 @@ The future of web performance is here, and it's powered by WebAssembly. Whether 
 
 ## Getting Started with WebAssembly
 
-If you're interested in getting started with WebAssembly, here are some resources to help you:
+If you're interested in getting started with WebAssembly, here are some resources to help you.:
 
 1. **MDN WebAssembly Documentation**: A comprehensive guide to WebAssembly fundamentals.
 2. **WebAssembly.org**: The official WebAssembly website with specifications and documentation.
