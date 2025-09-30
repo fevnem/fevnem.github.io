@@ -4,7 +4,7 @@ export async function GET({ site }) {
   const posts = await getCollection('blog');
   
   // Base URLs for different sections
-  const baseUrl = site?.href ?? 'https://yourblog.com';
+  const baseUrl = site?.href ?? 'https://fevnem.github.io/';
   const staticPages = [
     '',
     'about',
