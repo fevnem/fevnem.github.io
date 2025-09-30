@@ -6,11 +6,11 @@ const parser = new MarkdownIt();
 
 export async function GET(context) {
   const posts = await getCollection('blog');
-  const site = context.site || 'https://yourblog.com';
+  const site = context.site || 'https://fevnem.github.io';
 
   return rss({
-    title: 'Your Blog Name',
-    description: 'A blog about software development and technology',
+    title: 'fevnem blogs',
+    description: 'I,tri, updates here about everything',
     site: site,
     items: posts.map((post) => ({
       title: post.data.title,
