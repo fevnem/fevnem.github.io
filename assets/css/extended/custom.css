@@ -127,7 +127,7 @@ a:hover { color: var(--accent-ink); }
 
 .sidebar-brand {
   display: block;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--primary);
   text-decoration: none;
@@ -182,43 +182,40 @@ a:hover { color: var(--accent-ink); }
   flex-wrap: wrap;
 }
 
-.sidebar-head-icons {
-  display: flex;
-  align-items: center;
-  gap: 1px;
-}
-
-.sidebar-head .theme-toggle {
-  border: none;
-  background: none;
-  cursor: pointer;
-  color: var(--secondary);
-  width: 28px;
-  height: 28px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  transition: color 0.15s ease, background-color 0.15s ease;
-}
-
-.sidebar-head .theme-toggle:hover { color: var(--accent); background: var(--hover-bg); }
-
 .sidebar-head .social-icons a {
-  padding: 4px;
+  padding: 5px;
   border-radius: 8px;
   transition: background-color 0.15s ease;
 }
 
 .sidebar-head .social-icons a svg {
-  width: 17px;
-  height: 17px;
+  width: 20px;
+  height: 20px;
   color: var(--secondary);
   transition: color 0.15s ease;
 }
 
 .sidebar-head .social-icons a:hover { background: var(--hover-bg); }
 .sidebar-head .social-icons a:hover svg { color: var(--accent); }
+
+/* theme toggle (bottom of sidebar, as before) */
+.sidebar-social {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sidebar-toggle {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--secondary);
+  padding: 6px 8px 6px 0;
+  border-radius: 6px;
+  transition: color 0.15s ease;
+}
+
+.sidebar-toggle:hover { color: var(--accent); }
 
 .sidebar-foot {
   display: flex;
