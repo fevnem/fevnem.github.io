@@ -1,53 +1,12 @@
 ---
 title: "WebAssembly: The Future of Web Performance"
 description: "An in-depth exploration of WebAssembly (Wasm), its capabilities, and how it's revolutionizing web application performance."
-pubDate: 2024-02-22
+date: 2024-02-22
 tags: ["webassembly", "performance", "web-development", "programming"]
-featured: false
-thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-heroImage: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
-references: [
-  {
-    id: "1",
-    title: "WebAssembly Specification",
-    url: "https://webassembly.github.io/spec/core/",
-    authors: ["WebAssembly Working Group"],
-    date: "2023"
-  },
-  {
-    id: "2",
-    title: "Bringing WebAssembly to the Web",
-    url: "https://developers.google.com/web/updates/2019/02/hotpath-with-wasm",
-    authors: ["Google Developers"],
-    date: "2019"
-  },
-  {
-    id: "3",
-    title: "WebAssembly: Mozilla Developer Network",
-    url: "https://developer.mozilla.org/en-US/docs/WebAssembly",
-    authors: ["Mozilla Developer Network"],
-    date: "2023"
-  },
-  {
-    id: "4",
-    title: "Rust and WebAssembly",
-    url: "https://rustwasm.github.io/docs/book/",
-    authors: ["Rust and WebAssembly Working Group"],
-    date: "2023"
-  },
-  {
-    id: "5",
-    title: "WebAssembly Studio",
-    url: "https://webassembly.studio/",
-    authors: ["WebAssembly Foundation"],
-    date: "2023"
-  }
-]
+cover:
+  image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+  alt: "Laptop with code on screen"
 ---
-
-# WebAssembly: The Future of Web Performance
-
-![WebAssembly Code](https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80)
 
 ## Introduction
 
@@ -167,13 +126,13 @@ async function loadWasmModule() {
   // Fetch the WebAssembly module
   const response = await fetch('simple.wasm');
   const buffer = await response.arrayBuffer();
-  
+
   // Compile and instantiate the module
   const module = await WebAssembly.instantiate(buffer);
-  
+
   // Get the exported function
   const add = module.instance.exports.add;
-  
+
   // Call the function
   console.log(add(40, 2)); // Output: 42
 }
@@ -279,7 +238,7 @@ The future of web performance is here, and it's powered by WebAssembly. Whether 
 
 ## Getting Started with WebAssembly
 
-If you're interested in getting started with WebAssembly, here are some resources to help you.:
+If you're interested in getting started with WebAssembly, here are some resources to help you:
 
 1. **MDN WebAssembly Documentation**: A comprehensive guide to WebAssembly fundamentals.
 2. **WebAssembly.org**: The official WebAssembly website with specifications and documentation.
