@@ -1,7 +1,6 @@
 <aside class="sidebar" id="sidebar">
     <div class="sidebar-inner">
         <div class="sidebar-top">
-            <img class="sidebar-avatar" src="{{ "images/avatar.webp" | absURL }}" alt="Avatar of {{ site.Title }}" width="64" height="64" loading="eager" decoding="async" />
             <a class="sidebar-brand" href="{{ "" | absLangURL }}">{{ site.Title }}</a>
             {{- with site.Params.tagline }}
             <p class="sidebar-tagline">{{ . }}</p>
@@ -36,7 +35,7 @@
                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                 </svg>
             </button>
-            {{ partial "social_icons.html" (dict "align" "left") }}
+            {{ partial "social_icons.html" (dict "align" "center") }}
         </div>
         <div class="sidebar-foot">
             <span>© {{ now.Year }} {{ site.Title }}</span>
