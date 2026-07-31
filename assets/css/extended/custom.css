@@ -127,11 +127,12 @@ a:hover { color: var(--accent-ink); }
 
 .sidebar-brand {
   display: block;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--primary);
   text-decoration: none;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .sidebar-brand:hover { color: var(--accent); }
@@ -173,23 +174,51 @@ a:hover { color: var(--accent-ink); }
   font-weight: 600;
 }
 
-.sidebar-social { margin-bottom: 20px; display: flex; align-items: center; gap: 2px; }
+.sidebar-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
 
-.sidebar-toggle {
+.sidebar-head-icons {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.sidebar-head .theme-toggle {
   border: none;
   background: none;
   cursor: pointer;
   color: var(--secondary);
-  padding: 6px 8px 6px 0;
-  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.sidebar-head .theme-toggle:hover { color: var(--accent); background: var(--hover-bg); }
+
+.sidebar-head .social-icons a {
+  padding: 4px;
+  border-radius: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.sidebar-head .social-icons a svg {
+  width: 17px;
+  height: 17px;
+  color: var(--secondary);
   transition: color 0.15s ease;
 }
 
-.sidebar-toggle:hover { color: var(--accent); }
-
-.sidebar-social .social-icons a { padding: 6px 8px 6px 0; }
-.sidebar-social .social-icons a svg { width: 20px; height: 20px; color: var(--secondary); transition: color 0.15s ease; }
-.sidebar-social .social-icons a:hover svg { color: var(--accent); }
+.sidebar-head .social-icons a:hover { background: var(--hover-bg); }
+.sidebar-head .social-icons a:hover svg { color: var(--accent); }
 
 .sidebar-foot {
   display: flex;
@@ -906,7 +935,6 @@ a:hover { color: var(--accent-ink); }
 
   .sidebar-social { margin: 0; }
   .sidebar-foot { display: none; }
-  .sidebar-toggle { display: none; } /* header has its own toggle on mobile */
 
   .content-inner { padding: 32px 24px 32px; }
   .post-grid { grid-template-columns: 1fr; }
