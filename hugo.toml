@@ -63,8 +63,12 @@ pygmentsUseClasses = true
   mainSections = ["posts"]
 
   [params.homeInfoParams]
-    Title = "Welcome to my digital garden 🌱"
-    Content = "I'm Rakib — a software engineer. This is my personal wiki-style blog where I cultivate notes, ideas, and deep-dives on software development, system design, and web engineering. Pull up a chair, explore the connections, and watch it grow."
+    Title = "I build things for the <span class=\"grad-text\">web</span>."
+    Content = "Software engineer exploring systems, performance, and everything in between. This is my digital garden — a growing collection of notes, deep-dives, and ideas I'm cultivating."
+
+  [params.footer]
+    hideCopyright = false
+    text = "crafted with ☕ &amp; curiosity"
 
   [[params.socialIcons]]
     name = "github"
