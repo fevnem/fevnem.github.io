@@ -1,28 +1,8 @@
-{{- /* Aurora Garden — footer extensions: reveal animations + back-to-top */ -}}
+{{- /* Minimal Split — footer extensions: back-to-top */ -}}
 <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
 <script>
 (function () {
     "use strict";
-    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    /* ---- scroll reveal ---- */
-    var els = document.querySelectorAll(".post-entry, .first-entry, .page-header, .terms, .archive-year, .pagination, .post-single");
-    if (reduced || !("IntersectionObserver" in window)) {
-        for (var i = 0; i < els.length; i++) { els[i].classList.add("visible"); }
-    } else {
-        for (var j = 0; j < els.length; j++) { els[j].classList.add("reveal"); }
-        var io = new IntersectionObserver(function (entries) {
-            entries.forEach(function (en) {
-                if (en.isIntersecting) {
-                    en.target.classList.add("visible");
-                    io.unobserve(en.target);
-                }
-            });
-        }, { threshold: 0.06, rootMargin: "0px 0px -36px 0px" });
-        for (var k = 0; k < els.length; k++) { io.observe(els[k]); }
-    }
-
-    /* ---- back to top ---- */
     var btn = document.getElementById("backToTop");
     function onScroll() {
         if (window.scrollY > 480) { btn.classList.add("show"); }
@@ -31,7 +11,7 @@
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     btn.addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
 })();
 </script>
