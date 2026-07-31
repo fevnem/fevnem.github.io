@@ -1,0 +1,40 @@
+{{- define "main" }}
+<div class="layout">
+    {{ partial "sidebar.html" . }}
+    <div class="content">
+        <div class="content-inner">
+
+            <header class="page-header">
+                <h1>{{ .Title }}</h1>
+                {{- if .Description }}
+                <div class="post-description">{{ .Description | markdownify }}</div>
+                {{- end }}
+            </header>
+
+            <div class="project-grid">
+                {{- range .RegularPages.ByWeight }}
+                <article class="project-card">
+                    {{- with .Params.status }}
+                    <div class="project-status"><span class="project-dot"></span>{{ . }}</div>
+                    {{- end }}
+                    <h2 class="project-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                    <p class="project-desc">{{ .Description | plainify }}</p>
+                    <div class="project-tags">
+                        {{- range .Params.tags }}
+                        <span class="tag">{{ . }}</span>
+                        {{- end }}
+                    </div>
+                    <div class="project-links">
+                        {{- with .Params.github }}
+                        <a class="btn btn-outline btn-sm" href="{{ . }}" target="_blank" rel="noreferrer">&lt;/&gt; Source</a>
+                        {{- end }}
+                        <a class="btn btn-outline btn-sm" href="{{ .Permalink }}">Details →</a>
+                    </div>
+                </article>
+                {{- end }}
+            </div>
+
+        </div>
+    </div>
+</div>
+{{- end }}{{- /* end main */ -}}
