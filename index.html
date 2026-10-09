@@ -1,19 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Rakib Hasan</title>
-<meta http-equiv="refresh" content="0; url=/biodata.html" />
-<meta name="description" content="Rakib Hasan — data scientist and agent builder." />
-<script>
-  window.location.replace("/biodata.html");
-</script>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f94144'/%3E%3Ctext x='32' y='45' font-family='Verdana,sans-serif' font-size='34' font-weight='800' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Notebook | Rakib Hasan</title>
+<meta name="description" content="The notebook of Rakib Hasan — instruments for data work, agents, and small self-contained tools. No build step, no dependencies, no third-party requests.">
+<link rel="stylesheet" href="css/notebook.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 </head>
 <body>
-<p style="font-family: system-ui, sans-serif; text-align: center; padding-top: 4em;">
-  Redirecting to <a href="/biodata.html">biodata</a>…
-</p>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="sheet">
+  <main class="page" id="main" data-page="index">
+    <aside class="margin" aria-label="Notes">
+      <p class="margin-note">Hand-written, one file at a time. Nothing here is generated.</p>
+    </aside>
+
+    <div class="prose">
+
+      <header class="masthead">
+        <p class="overline mono">Rakib Hasan · Notebook</p>
+        <h1 class="display">I build instruments: data work, agents, and small self-contained tools.</h1>
+        <p class="lede">This page is the whole site — no build step, no dependencies, nothing fetched from anyone else’s server, and every file checked by <code>tools/verify.mjs</code> before it ships.</p>
+      </header>
+
+      <section class="entries" aria-labelledby="recent">
+        <h2 id="recent">Recent entries</h2>
+        <ul class="entry-list">
+          <li class="entry">
+            <a class="entry-title" href="a/thirty-eight-microseconds">Thirty-eight microseconds</a>
+            <span class="entry-meta mono"><time datetime="2026-10-09">2026-10-09</time> · gps · relativity · instruments</span>
+            <span class="entry-summary">The clocks in orbit run fast; ignore that and your position drifts eleven kilometres a day.</span>
+          </li>
+        </ul>
+        <noscript>
+          <p class="note">JavaScript is off, so this list is whatever was written into the page by hand — here, the one entry so far. The full, always-current index lives on the <a href="articles.html">Articles</a> page.</p>
+        </noscript>
+        <p class="more"><a href="articles.html">Every entry →</a></p>
+      </section>
+
+      <section class="shipped" aria-labelledby="shipped">
+        <h2 id="shipped">Shipped</h2>
+        <ul class="ship-list">
+          <li class="ship"><a href="https://github.com/fevnem/unfinished-lives" rel="noreferrer">unfinished-lives</a> — a browser game about unfinished lives, 32 cases.</li>
+          <li class="ship"><a href="https://github.com/fevnem/where-you-are" rel="noreferrer">where-you-are</a> — a hand-written WebGL2 explainer of GPS: 40/40 math checks, 20/20 page checks, zero dependencies.</li>
+        </ul>
+      </section>
+
+      <p class="closing">If any of this is close to what you are working on, <a href="contact.html">get in touch</a>.</p>
+
+    </div>
+
+    <nav class="tabs" aria-label="Sections">
+      <a class="tab" href="index.html"      data-tab="index">Index</a>
+      <a class="tab" href="biodata.html"    data-tab="biodata">Biodata</a>
+      <a class="tab" href="projects.html"   data-tab="projects">Projects</a>
+      <a class="tab" href="articles.html"   data-tab="articles">Articles</a>
+      <a class="tab" href="uses.html"       data-tab="uses">Uses</a>
+      <a class="tab" href="contact.html"    data-tab="contact">Contact</a>
+      <button class="tab tab--theme" id="theme-toggle" aria-label="Switch theme">Lamp</button>
+    </nav>
+  </main>
+
+  <footer class="colophon">
+    <span>© 2026 Rakib Hasan</span>
+    <span class="mono">no build · no dependencies · no tracking</span>
+    <a href="https://github.com/fevnem" rel="noreferrer">GitHub</a>
+  </footer>
+</div>
+
+<script type="module" src="js/site.js"></script>
 </body>
 </html>

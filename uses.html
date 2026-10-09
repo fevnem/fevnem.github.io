@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Uses | Rakib Hasan</title>
+  <meta name="description" content="What Rakib Hasan actually builds with: languages, editors, hardware and services — one honest line each.">
+  <link rel="stylesheet" href="css/notebook.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="sheet">
+    <main class="page" id="main" data-page="uses">
+      <aside class="margin" aria-label="Notes">
+        <p class="margin-note">The bench, listed honestly: nothing here is sponsored.</p>
+      </aside>
+
+      <div class="prose">
+        <p class="overline mono">Uses</p>
+        <h1>What I build with</h1>
+        <p class="lede">No affiliate links, no logo wall. One line each on why a thing earns its place.</p>
+
+        <section class="uses">
+          <h2>Languages</h2>
+          <ul class="uses-list">
+            <li><strong>Go</strong> — services and small binaries. One file to run, no runtime to install, and the standard library is usually enough.</li>
+            <li><strong>JavaScript, as ES modules</strong> — for things that must run in a browser without a build step. No bundler, ever.</li>
+            <li><strong>Python</strong> — data work and throwaway analysis. It stays throwaway on purpose.</li>
+          </ul>
+
+          <h2>Instruments</h2>
+          <ul class="uses-list">
+            <li><strong>WebGL2, hand-written</strong> — for explaining things that need a picture you can turn. Shaders written by hand beat a scene-graph library for one-off work.</li>
+            <li><strong>Plain canvas 2D</strong> — when the thing is a chart, not a world.</li>
+            <li><strong>Node, only as a test driver</strong> — headless Chromium over raw CDP, zero dependencies, aimed at the page I just wrote.</li>
+          </ul>
+
+          <h2>Hardware</h2>
+          <ul class="uses-list">
+            <li><strong>A headless Linux box</strong> — most of what I make is built and verified on a server with no screen, then looked at in a browser when it is done.</li>
+            <li><strong>Whatever keyboard is nearest</strong> — this is not that kind of page.</li>
+          </ul>
+
+          <h2>Services</h2>
+          <ul class="uses-list">
+            <li><strong>GitHub</strong> — the code lives there, and this site is served from it as plain files.</li>
+            <li><strong>Nothing analytics-shaped</strong> — no trackers, no cookies, no third-party fonts. The page you are reading made zero requests off this domain.</li>
+          </ul>
+        </section>
+
+        <p class="note">Curious about any of it? <a href="contact.html">Ask</a> — or read <a href="articles.html">the entries</a>.</p>
+      </div>
+
+      <nav class="tabs" aria-label="Sections">
+        <a class="tab" href="index.html"      data-tab="index">Index</a>
+        <a class="tab" href="biodata.html"    data-tab="biodata">Biodata</a>
+        <a class="tab" href="projects.html"   data-tab="projects">Projects</a>
+        <a class="tab" href="articles.html"   data-tab="articles">Articles</a>
+        <a class="tab" href="uses.html"       data-tab="uses">Uses</a>
+        <a class="tab" href="contact.html"    data-tab="contact">Contact</a>
+        <button class="tab tab--theme" id="theme-toggle" aria-label="Switch theme">Lamp</button>
+      </nav>
+    </main>
+
+    <footer class="colophon">
+      <span>© 2026 Rakib Hasan</span>
+      <span class="mono">no build · no dependencies · no tracking</span>
+      <a href="https://github.com/fevnem" rel="noreferrer">GitHub</a>
+    </footer>
+  </div>
+
+  <script type="module" src="js/site.js"></script>
+</body>
+</html>

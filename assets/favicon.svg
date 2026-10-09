@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Notebook">
+  <rect width="64" height="64" rx="13" fill="#f6f2e9"/>
+  <rect x="11" y="8" width="42" height="48" rx="4" fill="#fffdf7"/>
+  <rect x="11" y="8" width="5" height="48" fill="#b23a2f"/>
+  <g stroke="#d9d2c2" stroke-width="1.6" stroke-linecap="round">
+    <line x1="22" y1="22" x2="46" y2="22"/>
+    <line x1="22" y1="31" x2="46" y2="31"/>
+    <line x1="22" y1="40" x2="38" y2="40"/>
+  </g>
+  <text x="34" y="52" font-family="Georgia,'Times New Roman',serif" font-size="15" font-style="italic" fill="#12100c" text-anchor="middle">R</text>
+</svg>

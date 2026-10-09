@@ -1,105 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Projects | Rakib Hasan</title>
-<meta name="description" content="Projects by Rakib Hasan — roleplay and more." />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f94144'/%3E%3Ctext x='32' y='45' font-family='Verdana,sans-serif' font-size='34' font-weight='800' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projects | Rakib Hasan</title>
+  <meta name="description" content="Shipped projects by Rakib Hasan — unfinished-lives, where-you-are. Nothing mocked: every card links to a repo you can clone and run.">
+  <link rel="stylesheet" href="css/notebook.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-<!-- ======= NAV ======= -->
-<header class="site-nav">
-    <nav class="nav-pill" aria-label="Main">
-        <a href="biodata.html" class="nav-item" aria-label="Biodata">
-            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-            <span class="nav-label">Biodata</span>
-        </a>
-        <a href="projects.html" class="nav-item active" aria-label="Projects">
-            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="3" y="3" rx="1"/><rect width="8" height="4" x="13" y="3" rx="1"/><path d="M5 7v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7"/><path d="M9 7v8"/></svg>
-            <span class="nav-label">Projects</span>
-        </a>
-        <a href="https://github.com/fevnem" target="_blank" rel="noreferrer" class="nav-item" aria-label="GitHub">
-            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"/><path d="M12 12v3"/></svg>
-            <span class="nav-label">GitHub</span>
-        </a>
-        <span class="nav-divider" aria-hidden="true"></span>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark theme" title="Toggle theme">
-            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        </button>
-    </nav>
-</header>
+  <div class="sheet">
+    <main class="page" id="main" data-page="projects">
+      <aside class="margin" aria-label="Notes"></aside>
 
-<main>
+      <div class="prose">
+        <header class="page-head">
+          <p class="kicker mono">Shipped</p>
+          <h1>Projects</h1>
+          <p class="lede">Two things that run. Each one works from a clone with no build step, and each one links to the repo it lives in. The numbers below are printed by those repos’ own harnesses, not typed in by hand.</p>
+        </header>
 
-    <!-- ======= PROJECTS ======= -->
-    <section class="container projects" id="projects">
-        <h2 class="section-title reveal">
-            <span>Projects</span>
-            <span class="section-title--ghost">I&rsquo;ve shipped</span>
-        </h2>
+        <section class="cards" aria-label="Shipped projects">
 
-        <div class="projects-grid">
+          <article class="card">
+            <h2 class="card-name">unfinished-lives</h2>
+            <p class="card-line">A browser game about a bureaucratic afterlife — sort a stranger’s paper, mark what cannot both be true, then sign a verdict.</p>
+            <p class="card-meta mono">browser ES modules<span class="sep">·</span>MIT<span class="sep">·</span><span class="status"><span class="dot" aria-hidden="true"></span>shipped</span></p>
+            <ul class="card-proof mono">
+              <li>32 cases</li>
+              <li>100/100 per case</li>
+              <li>0 lint errors</li>
+            </ul>
+            <p class="card-link"><a href="https://github.com/fevnem/unfinished-lives" rel="noreferrer">github.com/fevnem/unfinished-lives&nbsp;→</a></p>
+          </article>
 
-            <article class="proj-card reveal">
-                <div class="proj-key">
-                    <span class="dot dot-green"></span>
-                    <span class="proj-tag mono">Go · MIT · open source</span>
-                </div>
-                <h3 class="proj-name">roleplay</h3>
-                <p class="proj-desc">
-                    Talk to a character who remembers you. Self-contained character-roleplay chat with streaming SSE replies, in-session fact memory, and personas — one Go binary, no database, no build step.
-                </p>
-                <div class="proj-meta mono">
-                    <span>4 personas</span>
-                    <span>·</span>
-                    <span>streaming</span>
-                </div>
-                <div class="proj-actions">
-                    <a href="https://github.com/fevnem/roleplay" target="_blank" rel="noreferrer" class="btn btn-outline btn-sm">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        Source
-                    </a>
-                </div>
-            </article>
+          <article class="card">
+            <h2 class="card-name">where-you-are</h2>
+            <p class="card-line">An explorable explanation of GPS, where the picture on screen and the number in the readout come from the same code.</p>
+            <p class="card-meta mono">hand-written WebGL2<span class="sep">·</span>MIT<span class="sep">·</span><span class="status"><span class="dot" aria-hidden="true"></span>shipped</span></p>
+            <ul class="card-proof mono">
+              <li>9 chapters</li>
+              <li>30 controls</li>
+              <li>40/40 math checks</li>
+            </ul>
+            <p class="card-link"><a href="https://github.com/fevnem/where-you-are" rel="noreferrer">github.com/fevnem/where-you-are&nbsp;→</a></p>
+          </article>
 
-            <article class="proj-card proj-card--skeleton reveal" aria-hidden="true">
-                <h3 class="proj-name proj-name--skeleton">Next project</h3>
-                <p class="proj-desc">
-                    Reserve a slot — more work landing here soon.
-                </p>
-            </article>
+        </section>
 
-            <article class="proj-card proj-card--skeleton reveal" aria-hidden="true">
-                <h3 class="proj-name proj-name--skeleton">Next project</h3>
-                <p class="proj-desc">
-                    Reserve a slot — more work landing here soon.
-                </p>
-            </article>
+        <section class="workshop" aria-labelledby="workshop-title">
+          <h2 id="workshop-title">In the workshop</h2>
+          <p>Not everything is finished, and the unfinished parts do not get a card here — a card means a repo you can run. The rest lives in the <a href="articles.html">notebook</a>: working chapters, half-solved numbers, things still being argued with. It starts with <a href="articles.html">Thirty-eight microseconds</a>, the chapter that later became <em>where-you-are</em>.</p>
+        </section>
+      </div>
 
-        </div>
-    </section>
+      <nav class="tabs" aria-label="Sections">
+        <a class="tab" href="index.html"      data-tab="index">Index</a>
+        <a class="tab" href="biodata.html"    data-tab="biodata">Biodata</a>
+        <a class="tab" href="projects.html"   data-tab="projects">Projects</a>
+        <a class="tab" href="articles.html"   data-tab="articles">Articles</a>
+        <a class="tab" href="uses.html"       data-tab="uses">Uses</a>
+        <a class="tab" href="contact.html"    data-tab="contact">Contact</a>
+        <button class="tab tab--theme" id="theme-toggle" aria-label="Switch theme">Lamp</button>
+      </nav>
+    </main>
 
-</main>
+    <footer class="colophon">
+      <span>© 2026 Rakib Hasan</span>
+      <span class="mono">no build · no dependencies · no tracking</span>
+      <a href="https://github.com/fevnem" rel="noreferrer">GitHub</a>
+    </footer>
+  </div>
 
-<!-- ======= FOOTER ======= -->
-<footer class="footer">
-    <div class="container footer-inner">
-        <span class="footer-copy">&copy; 2026 Rakib Hasan</span>
-        <nav class="footer-links" aria-label="Footer">
-            <a href="biodata.html">Biodata</a>
-            <a href="projects.html">Projects</a>
-            <a href="https://github.com/fevnem" target="_blank" rel="noreferrer">GitHub</a>
-        </nav>
-    </div>
-</footer>
-
-<script src="script.js"></script>
+  <script type="module" src="js/site.js"></script>
 </body>
 </html>

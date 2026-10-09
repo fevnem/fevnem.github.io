@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>No such entry | Rakib Hasan</title>
+<meta name="description" content="Nothing is filed under that address. This is the dead end of the Notebook — every real page is linked below.">
+<link rel="stylesheet" href="css/notebook.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+/* Page-local toggle, JS-optional. With no router: .entry stays [hidden]
+   and .notfound shows. The entry reveals itself once the router fills
+   .entry-title (or if site.js adds .is-entry / drops [hidden]). */
+.entry{display:none}
+.is-entry .entry,.entry:not([hidden]),.entry:has(.entry-title:not(:empty)){display:block}
+.is-entry .notfound,.entry:not([hidden])~.notfound,.entry:has(.entry-title:not(:empty))~.notfound{display:none}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="sheet">
+  <main class="page" id="main" data-page="404">
+    <aside class="margin" aria-label="Notes">
+      <p class="margin-note">404 · the dead end, kept tidy.</p>
+    </aside>
+
+    <div class="prose">
+
+      <article class="entry" hidden>
+        <h1 class="entry-title"></h1>
+        <div class="prose"></div>
+      </article>
+
+      <div class="notfound">
+        <p class="overline mono">Error 404</p>
+        <h1 class="display">No such entry</h1>
+        <p class="lede">That address is not filed in this notebook, though the rest of it still is.</p>
+        <ul class="notfound-list">
+          <li><a href="index.html">Index</a> — the cover</li>
+          <li><a href="articles.html">Articles</a> — every entry, newest first</li>
+          <li><a href="biodata.html">Biodata</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="uses.html">Uses</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <nav class="tabs" aria-label="Sections">
+      <a class="tab" href="index.html"      data-tab="index">Index</a>
+      <a class="tab" href="biodata.html"    data-tab="biodata">Biodata</a>
+      <a class="tab" href="projects.html"   data-tab="projects">Projects</a>
+      <a class="tab" href="articles.html"   data-tab="articles">Articles</a>
+      <a class="tab" href="uses.html"       data-tab="uses">Uses</a>
+      <a class="tab" href="contact.html"    data-tab="contact">Contact</a>
+      <button class="tab tab--theme" id="theme-toggle" aria-label="Switch theme">Lamp</button>
+    </nav>
+  </main>
+
+  <footer class="colophon">
+    <span>© 2026 Rakib Hasan</span>
+    <span class="mono">no build · no dependencies · no tracking</span>
+    <a href="https://github.com/fevnem" rel="noreferrer">GitHub</a>
+  </footer>
+</div>
+
+<script type="module" src="js/site.js"></script>
+</body>
+</html>

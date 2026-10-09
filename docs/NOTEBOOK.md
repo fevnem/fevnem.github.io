@@ -13,7 +13,7 @@ different class name, token or markup shape, because another hand is writing the
 3. **Escape-then-tag, always.** Author text is escaped first; only renderer-generated tags are ever
    inserted. `innerHTML` may receive **renderer output only**; everything else uses `textContent`.
 4. **Nav items are real pages — never `href="#…"`.** No same-page anchors under `.tabs`.
-5. **Budgets are enforced by `node tools/verify.mjs`** and are hard failures:
+5. **Budgets are enforced by `node ~/.hermes/cache/scratch/notebook-harness/verify.mjs`** and are hard failures:
    page HTML ≤ 6 KB · `css/notebook.css` ≤ 12 KB · `js/md.js` + `js/site.js` ≤ 8 KB combined ·
    0 off-origin requests · 0 CLS · no horizontal overflow at 1440/1024/900/390.
 6. **Motion is optional.** Everything animates with `opacity`/`transform` only, and
@@ -175,7 +175,7 @@ newest first. Adding an entry = the `.md` file + one manifest line.
 ```
 node --check <yourfile>            # JS hands
 node tools/md-test.mjs             # P1 hands
-node tools/verify.mjs              # everyone: must end "0 failed"
+node ~/.hermes/cache/scratch/notebook-harness/verify.mjs              # everyone: must end "0 failed"
 ```
 
 Report, with real pasted output: what you wrote, the exact gate command, the numbers it printed,
