@@ -1,0 +1,11 @@
+[
+  {
+    "slug": "thirty-eight-microseconds",
+    "title": "Thirty-eight microseconds",
+    "date": "2026-10-09",
+    "summary": "The clocks in orbit run fast. Ignore that and your position drifts eleven kilometres a day.",
+    "tags": ["gps", "relativity", "instruments"],
+    "minutes": 6,
+    "draft": false
+  }
+]
