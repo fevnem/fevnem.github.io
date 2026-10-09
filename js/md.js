@@ -13,18 +13,18 @@ const i=ln.indexOf(':'),k=ln.slice(0,i).trim();
 if(i<1||!/^\w+$/i.test(k))continue;
 let v=ln.slice(i+1).trim();
 if(/^\[[\s\S]*\]$/.test(v))v=v.slice(1,-1).split(',').map(s=>s.trim().replace(/["']/g,'')).filter(Boolean);
-else{v=v.replace(/^["']|["']$/g,'');v=v==='true'||(v!=='false'&&v);}
+else{v=v.replace(/^["']|["']$/g,'');v=v==='true'||(v==='false'?!1:+v||v);}
 data[k]=v;}
 return{data,body:src.slice(m[0].length)};}
 function inline(s,C,d){
 if(d>9)return esc(s);
-let o='',i=0,n=s.length;
+let o='',i=0,n=s.length;const BK=s.includes(']');
 while(i<n){
 const c=s[i],r=s.slice(i);
 if(c==='\n'){if(/ {2,}$/.test(o))o=o.replace(/ +$/,'')+'<br>';else o+='\n';i++;continue;}
 if(c==='`'){const m=/^(`+)([\s\S]*?)\1/.exec(r);if(m){o+='<code>'+esc(m[2])+'</code>';i+=m[0].length;continue;}}
-if(c==='!'&&s[i+1]==='['){const m=/^!\[([^\]]*)]\(\s*([^\s)>]+)[^)]*\)/.exec(r);if(m){o+='<img src="'+esc(url(m[2]))+'" alt="'+esc(m[1])+'" loading="lazy" decoding="async">';i+=m[0].length;continue;}}
-if(c==='['){
+if(BK&&c==='!'&&s[i+1]==='['){const m=/^!\[([^\]]*)]\(\s*([^\s)>]+)[^)]*\)/.exec(r);if(m){o+='<img src="'+esc(url(m[2]))+'" alt="'+esc(m[1])+'" loading="lazy" decoding="async">';i+=m[0].length;continue;}}
+if(BK&&c==='['){
 const f=/^\[\^([^\]\s]+)]/.exec(r);
 if(f){const raw=f[1],id=raw.replace(/[^\w-]/g,''),nw=!C.seen.has(id);if(nw){C.seen.add(id);C.order.push(raw);}
 o+='<sup class="fn-ref"><a href="#fn-'+id+'"'+(nw?' id="fnref-'+id+'"':'')+'>'+esc(raw)+'</a></sup>';i+=f[0].length;continue;}

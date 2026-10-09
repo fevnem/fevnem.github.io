@@ -1,7 +1,7 @@
 # fevnem.github.io — the Notebook
 
 A personal site that is authored in **markdown**, rendered by a markdown renderer written for it, and
-has **no build step and no dependencies**. It is served as plain files by GitHub Pages.
+is served as plain files by GitHub Pages.
 
     index.html              the cover
     biodata.html            the person, as a chronology
@@ -16,7 +16,6 @@ has **no build step and no dependencies**. It is served as plain files by GitHub
     css/notebook.css        the entire look
     js/md.js                the markdown renderer
     js/site.js              routing, tabs, theme, entry loading
-    docs/NOTEBOOK.md        the build contract (tokens, class names, markup shapes, budgets)
 
 ## Writing an entry
 
@@ -42,12 +41,10 @@ theme file to configure, no plugin.
 
 ## The rules
 
-- **No dependencies, no build, no tracking.** Zero requests leave this domain: system fonts only, no
-  analytics, no third-party anything.
 - **Escape-then-tag.** Every character of author text is escaped before any tag is inserted, so a
   hostile markdown file cannot inject markup.
 - **Nav items are real pages.** No same-page anchors anywhere in the navigation.
-- **Lightweight on purpose.** Roughly 9 KB of JavaScript and 12 KB of CSS in total, no images.
+- **Plain files.** System fonts, no images, nothing fetched from another origin.
 
 ## Markdown support
 

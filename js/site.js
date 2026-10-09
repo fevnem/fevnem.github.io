@@ -1,5 +1,5 @@
 /* js/site.js — router */
-const K='theme',root=document.documentElement,SF=' | Rakib Hasan',RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const K='theme',root=document.documentElement,SF=' | tri',RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let st;try{st=localStorage.getItem(K)}catch{}
 if(st)root.classList.toggle('dark',st==='dark');
 const $=(s,r)=>(r||document).querySelector(s);
